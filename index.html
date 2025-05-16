@@ -14,41 +14,50 @@
         body {
             background: url('mantenimiento.png') no-repeat center center fixed;
             background-size: cover;
+        }
+        .social-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
+            gap: 15px;
+        }
+        .social-buttons a {
+            display: inline-flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-bottom: 50px;
-            font-family: Arial, sans-serif;
-        }
-        .buttons {
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            gap: 20px;
-        }
-        .buttons a {
+            border-radius: 50%;
             text-decoration: none;
-            color: #fff;
-            background-color: #25D366;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease;
         }
-        .buttons a.instagram {
-            background-color: #E1306C;
+        .social-buttons a:hover {
+            transform: scale(1.1);
         }
-        .buttons a:hover {
-            opacity: 0.8;
+        .social-buttons svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
     </style>
 </head>
 <body>
-    <div class="buttons">
-        <a href="https://wa.me/59898800997" target="_blank">WhatsApp</a>
-        <a href="https://instagram.com/srzsacabollos" target="_blank" class="instagram">Instagram</a>
+
+    <div class="social-buttons">
+        <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 32 32">
+                <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82 0.73 5.464 2.006 7.775L0 32l8.455-2.214C11.055 31.27 13.472 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.405c-2.24 0-4.373-0.597-6.236-1.714l-0.447-0.265-5.015 1.313 1.34-4.887-0.29-0.466C4.313 21.33 3.676 18.708 3.676 16 3.676 8.865 8.865 3.676 16 3.676S28.324 8.865 28.324 16 23.135 28.324 16 28.324zM23.027 19.757c-0.332-0.166-1.961-0.967-2.266-1.078s-0.525-0.166-0.747 0.166-0.857 1.078-1.049 1.3-0.387 0.25-0.719 0.084-1.4-0.516-2.668-1.644c-0.986-0.879-1.652-1.963-1.844-2.295s-0.02-0.513 0.146-0.68c0.15-0.15 0.332-0.389 0.498-0.583s0.221-0.332 0.332-0.554 0.055-0.416-0.027-0.583c-0.082-0.166-0.747-1.803-1.024-2.473-0.27-0.65-0.545-0.563-0.747-0.574-0.194-0.012-0.416-0.014-0.637-0.014s-0.583 0.084-0.887 0.416-1.161 1.134-1.161 2.764 1.191 3.204 1.357 3.43c0.166 0.221 2.346 3.582 5.688 5.025 0.795 0.343 1.416 0.547 1.898 0.699 0.797 0.253 1.522 0.217 2.095 0.131 0.639-0.096 1.961-0.799 2.238-1.571 0.276-0.771 0.276-1.432 0.193-1.571-0.082-0.141-0.304-0.221-0.637-0.387z"></path>
+            </svg>
+        </a>
+        <a href="https://instagram.com/srzssacabollos" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 448 512">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6S374.3 0 338.6 1.7c-35.7 1.7-141.3 1.7-177 0-35.7-1.7-67.3 9.9-93.6 36.2S0 137.7 1.7 173.4c1.7 35.7 1.7 141.3 0 177-1.7 35.7 9.9 67.3 36.2 93.6s57.9 37.9 93.6 36.2c35.7-1.7 141.3-1.7 177 0 35.7 1.7 67.3-9.9 93.6-36.2s37.9-57.9 36.2-93.6c-1.7-35.7-1.7-141.3 0-177zM398.8 388c-7.8 19.6-23 35.8-42.6 43.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.8-24-42.6-43.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 23-35.8 42.6-43.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.8 24 42.6 43.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+        </a>
     </div>
+
 </body>
 </html>
