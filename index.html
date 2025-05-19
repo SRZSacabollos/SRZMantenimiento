@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página en Mantenimiento</title>
 
   <!-- SEO y Favicon -->
@@ -11,7 +11,7 @@
   <meta name="author" content="SRZ Sacabollos">
   <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
 
-  <!-- Iconos FontAwesome -->
+  <!-- FontAwesome para íconos -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
@@ -61,7 +61,7 @@
 
     .social-icons a {
       color: white;
-      font-size: 5rem;
+      font-size: 2.5rem;
       text-decoration: none;
       transition: transform 0.3s ease;
     }
@@ -94,6 +94,14 @@
       filter: grayscale(100%) brightness(0.7);
       cursor: pointer;
     }
+
+    /* Para móviles: mostrar siempre el mapa */
+    @media (max-width: 768px) {
+      .map-container {
+        opacity: 1 !important;
+        pointer-events: all !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -123,26 +131,28 @@
     const socialArea = document.getElementById("social");
     const mapContainer = document.getElementById("map-container");
 
-    // Mostrar el mapa cuando el mouse entra sobre los íconos
-    socialArea.addEventListener("mouseenter", () => {
-      mapContainer.classList.add("active");
-    });
-
-    socialArea.addEventListener("mouseleave", () => {
-      mapContainer.classList.remove("active");
-    });
-
-    // Mostrar el mapa si el mouse entra en el tercio inferior de la pantalla
-    document.addEventListener("mousemove", (e) => {
-      const screenHeight = window.innerHeight;
-      if (e.clientY > screenHeight * 0.66) {
+    // No aplicar animación en móviles
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      socialArea.addEventListener("mouseenter", () => {
         mapContainer.classList.add("active");
-      } else {
-        mapContainer.classList.remove("active");
-      }
-    });
+      });
 
-    // Redirigir a Google Maps al hacer clic en el iframe
+      socialArea.addEventListener("mouseleave", () => {
+        mapContainer.classList.remove("active");
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        const screenHeight = window.innerHeight;
+        if (e.clientY > screenHeight * 0.66) {
+          mapContainer.classList.add("active");
+        } else {
+          mapContainer.classList.remove("active");
+        }
+      });
+    }
+
+    // Al hacer clic en el mapa, abrir el perfil de Google Maps
     const mapLink = "https://www.google.com/maps/place/Pres.+Giro+2475,+Montevideo,+Uruguay";
     document.getElementById("map-iframe").addEventListener("click", () => {
       window.open(mapLink, "_blank");
@@ -151,4 +161,3 @@
 
 </body>
 </html>
-
