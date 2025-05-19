@@ -4,85 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página en Mantenimiento</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        * {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html, body {
-            height: 100%;
-            width: 100%;
             background-color: #000;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-
-        body.desktop {
-            background: url('mantenimiento.png') no-repeat center center;
-            background-size: cover;
-            animation: fadeIn 2s ease forwards;
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #000;
         }
-
         .social-buttons {
             position: fixed;
             bottom: 20px;
             right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            z-index: 10;
+            gap: 10px;
+            z-index: 999;
         }
         .social-buttons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
             width: 60px;
             height: 60px;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: #25d366;
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-        .social-buttons a:hover {
-            transform: scale(1.15);
-            background-color: rgba(255, 255, 255, 0.2);
+        .social-buttons a:nth-child(2) {
+            background-color: #E1306C;
         }
         .social-buttons svg {
             width: 30px;
             height: 30px;
             fill: white;
         }
-
-        /* Modo móvil */
-        .mobile-container {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            background-color: #000;
-            animation: fadeIn 2s ease forwards;
-        }
-
-        .mobile-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Activar estilos móviles */
         @media (max-width: 768px) {
-            body.desktop {
-                background: none;
-            }
-            .mobile-container {
-                display: flex;
-            }
             .social-buttons a {
                 width: 50px;
                 height: 50px;
@@ -92,28 +65,60 @@
                 height: 24px;
             }
         }
-
     </style>
 </head>
-<body class="desktop">
-
-    <!-- Contenedor solo visible en móviles -->
-    <div class="mobile-container">
-        <img src="mantenimiento.png" alt="Página en mantenimiento">
+<body>
+    <div class="container">
+        <img src="mantenimiento.png" alt="Página en mantenimiento" class="background-img">
+        <div class="social-buttons">
+            <a href="https://wa.me/598XXXXXXXX" target="_blank" aria-label="WhatsApp">
+                <svg viewBox="0 0 32 32" fill="white">
+                    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.843 0.742 5.55 
+                    2.145 7.956L0 32l8.273-2.106C10.537 31.243 13.21 32 
+                    16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zM16 
+                    29.867c-2.517 0-4.972-0.675-7.12-1.955l-0.508-0.299L3.48 
+                    28.52l0.922-4.789-0.313-0.509C2.031 21.17 1.067 18.625 
+                    1.067 16 1.067 8.737 8.737 1.067 16 1.067S30.933 8.737 
+                    30.933 16 23.263 29.867 16 29.867zM23.163 19.636c-0.336 
+                    0.939-1.663 1.616-2.279 1.663-0.585 0.049-1.283 0.07-2.063-0.317-0.476-0.232-1.078-0.395-1.854-0.869-2.027-1.205-3.328-3.474-3.429-3.643s-0.821-1.142-0.821-2.184 
+                    0.517-1.548 0.703-1.758c0.185-0.211 0.41-0.264 
+                    0.547-0.264s0.273-0.002 0.391 0.007c0.125 0.008 
+                    0.293-0.048 0.459 0.35 0.172 0.409 0.585 1.411 
+                    0.638 1.514 0.049 0.103 0.08 0.222 0.016 0.361-0.064 
+                    0.14-0.096 0.227-0.191 0.35s-0.2 0.264-0.287 0.354c-0.094 
+                    0.096-0.191 0.201-0.082 0.396s0.484 0.795 1.034 
+                    1.286c0.712 0.634 1.293 0.829 1.488 0.923s0.312 
+                    0.078 0.438-0.047c0.127-0.125 0.508-0.593 
+                    0.644-0.797 0.135-0.205 0.271-0.17 0.459-0.102 
+                    0.191 0.07 1.213 0.573 1.419 0.678s0.344 0.156 
+                    0.395 0.244c0.053 0.088 0.053 0.939-0.283 1.878z"/>
+                </svg>
+            </a>
+            <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 448 512" fill="white">
+                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 
+                    370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 
+                    224.1 141zm0 186c-39.3 0-71.1-31.8-71.1-71.1S184.8 
+                    184.9 224.1 184.9 295.2 216.7 295.2 255.9 263.4 
+                    327 224.1 327zm124.7-194.3c0 14.9-12.1 
+                    27-27 27s-27-12.1-27-27 12.1-27 27-27 
+                    27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.5s-57.8-34.5-93.5-36.2C270.4 
+                    0 177.6 0 141.8 1.7 106.1 3.4 74.5 11.6 48.3 
+                    37.9 22.1 64.1 10 95.7 8.3 131.4 6.6 167.2 6.6 
+                    259.9 8.3 295.6c1.7 35.7 9.9 67.3 36.2 93.5s57.8 
+                    34.5 93.5 36.2c35.7 1.7 128.5 1.7 164.2 
+                    0 35.7-1.7 67.3-9.9 93.5-36.2s34.5-57.8 
+                    36.2-93.5c1.7-35.7 1.7-128.5 
+                    0-164.2zM398.8 388c-7.8 19.6-22.9 34.7-42.6 
+                    42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 
+                    9-132.1c7.8-19.6 22.9-34.7 42.6-42.6C121.3 
+                    32.3 191.3 35 224 35s102.7-2.6 
+                    132.1 9c19.6 7.8 34.7 22.9 
+                    42.6 42.6 11.7 29.5 9 99.5 9 
+                    132.1s2.7 102.7-9 132.1z"/>
+                </svg>
+            </a>
+        </div>
     </div>
-
-    <!-- Botones flotantes -->
-    <div class="social-buttons">
-        <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
-            <!-- WhatsApp Icon -->
-            <svg viewBox="0 0 32 32">
-                <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82 0.73 5.464 2.006 7.775L0 32l8.455-2.214C11.055 31.27 13.472 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.405c-2.24 0-4.373-0.597-6.236-1.714l-0.447-0.265-5.015 1.313 1.34-4.887-0.29-0.466C4.313 21.33 3.676 18.708 3.676 16 3.676 8.865 8.865 3.676 16 3.676S28.324 8.865 28.324 16 23.135 28.324 16 28.324zM23.027 19.757c-0.332-0.166-1.961-0.967-2.266-1.078s-0.525-0.166-0.747 0.166-0.857 1.078-1.049 1.3-0.387 0.25-0.719 0.084-1.4-0.516-2.668-1.644c-0.986-0.879-1.652-1.963-1.844-2.295s-0.02-0.513 0.146-0.68c0.15-0.15 0.332-0.389 0.498-0.583s0.221-0.332 0.332-0.554 0.055-0.416-0.027-0.583c-0.082-0.166-0.747-1.803-1.024-2.473-0.27-0.65-0.545-0.563-0.747-0.574-0.194-0.012-0.416-0.014-0.637-0.014s-0.583 0.084-0.887 0.416-1.161 1.134-1.161 2.764 1.191 3.204 1.357 3.43c0.166 0.221 2.346 3.582 5.688 5.025 0.795 0.343 1.416 0.547 1.898 0.699 0.797 0.253 1.522 0.217 2.095 0.131 0.639-0.096 1.961-0.799 2.238-1.571 0.276-0.771 0.276-1.432 0.193-1.571-0.082-0.141-0.304-0.221-0.637-0.387z"></path>
-            </svg>
-        </a>
-        <a href="https://instagram.com/srzsacabollos" target="_blank" aria-label="Instagram">
-            <!-- Instagram Icon -->
-            <svg viewBox="0 0 448 512">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6S374.3 0 338.6 1.7c-35.7 1.7-141.3 1.7-177 0-35.7-1.7-67.3 9.9-93.6 36.2S0 137.7 1.7 173.4c1.7 35.7 1.7 141.3 0 177-1.7 35.7 9.9 67.3 36.2 93.6s57.9 37.9 93.6 36.2c35.7-1.7 141.3-1.7 177 0 35.7 1.7 67.3-9
-
+</body>
 </html>
-
