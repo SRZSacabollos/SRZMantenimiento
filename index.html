@@ -2,168 +2,134 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página en Mantenimiento</title>
-  
-  <!-- Meta SEO -->
+
+  <!-- SEO y Favicon -->
   <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
   <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar ">
   <meta name="author" content="SRZ Sacabollos">
   <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
 
-  <!-- Estilos -->
+  <!-- Iconos (FontAwesome) -->
+  <script src="https://kit.fontawesome.com/a2e0c6ad0f.js" crossorigin="anonymous"></script>
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: #000;
       font-family: Arial, sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      color: white;
       height: 100vh;
       overflow: hidden;
+      position: relative;
     }
 
-    .background-image {
+    .background {
+      background: url("mantenimiento.png") no-repeat center center;
+      background-size: contain;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
       z-index: 1;
+      background-color: #000;
     }
 
-    .overlay {
-      position: relative;
-      z-index: 2;
-      margin-top: auto;
-      margin-bottom: 60px;
-    }
-
-    .overlay h1, .overlay p {
-      margin: 10px 0;
-      text-shadow: 0 0 10px #000;
+    @media (max-width: 768px) {
+      .background {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
     }
 
     .social-icons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+      gap: 30px;
+      z-index: 3;
     }
 
     .social-icons a {
-      color: #fff;
-      font-size: 32px;
+      color: white;
+      font-size: 2rem;
       text-decoration: none;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .social-icons a:hover {
       transform: scale(1.2);
     }
 
-    .map-overlay {
+    .map-container {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 300px;
+      height: 40%;
+      z-index: 2;
       opacity: 0;
-      z-index: 1;
       pointer-events: none;
-      transition: opacity 1s ease;
+      transition: opacity 0.5s ease;
     }
 
-    .map-overlay.show {
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(100%) brightness(0.7);
+    }
+
+    .map-visible .map-container {
       opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-      .background-image {
-        object-fit: contain;
-        background-color: #000;
-      }
-
-      .overlay {
-        margin-bottom: 100px;
-      }
-
-      .map-overlay {
-        height: 250px;
-      }
+      pointer-events: all;
     }
   </style>
-
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/a2e0e6fa63.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Imagen de fondo -->
-    <img src="mantenimiento.png" alt="Página en mantenimiento" class="background-image" />
 
-    <!-- Mapa oculto -->
-    <div class="map-overlay" id="mapContainer">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.963706527969!2d-56.17594152371607!3d-34.90063327285751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f814543472b55%3A0x72659d20a7f96cc0!2sPres.%20Gir%C3%B3%202475%2C%2011300%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1716145023620!5m2!1ses-419!2suy"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+  <div class="background"></div>
 
-    <!-- Texto e íconos -->
-    <div class="overlay">
-      <h1>Nuestra página está en mantenimiento</h1>
-      <p>Estaremos de vuelta muy pronto</p>
-      <div class="social-icons" id="socialArea">
-        <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://www.instagram.com/srzsacabollos/" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </div>
+  <div class="social-icons" id="social">
+    <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/srzsacabollos" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
   </div>
 
-  <!-- Script para mostrar el mapa al interactuar -->
+  <div class="map-container" id="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.7997559646786!2d-56.17079662362204!3d-34.894128272845535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f813b44e2e88d%3A0x3c3e97b7ec7644a3!2sPres.%20Giro%202475%2C%2011800%20Montevideo%2C%20Uruguay!5e0!3m2!1ses-419!2suy!4v1716124923456!5m2!1ses-419!2suy"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
   <script>
-    const mapContainer = document.getElementById("mapContainer");
-    const socialArea = document.getElementById("socialArea");
+    const socialArea = document.getElementById("social");
+    const body = document.body;
 
-    // Mostrar el mapa cuando el mouse entra a la zona de los íconos
     socialArea.addEventListener("mouseenter", () => {
-      mapContainer.classList.add("show");
+      body.classList.add("map-visible");
     });
 
-    // Ocultar el mapa cuando el mouse sale de la zona
     socialArea.addEventListener("mouseleave", () => {
-      mapContainer.classList.remove("show");
-    });
-
-    // Mostrar el mapa si se scrollea cerca del fondo (para celulares)
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY + window.innerHeight;
-      const threshold = document.body.offsetHeight - 100;
-      if (scrollY >= threshold) {
-        mapContainer.classList.add("show");
-      }
+      body.classList.remove("map-visible");
     });
   </script>
+
 </body>
 </html>
-
