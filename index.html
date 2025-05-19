@@ -1,140 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página en Mantenimiento</title>
-    <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
-    <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar ">
-    <meta name="author" content="SRZ Sacabollos">
-    <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .background-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: #000;
-        }
-        .social-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-        .social-buttons a {
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-        .social-buttons a:nth-child(2) {
-            background-color: #E1306C;
-        }
-        .social-buttons svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-        @media (max-width: 768px) {
-            .social-buttons a {
-                width: 50px;
-                height: 50px;
-            }
-            .social-buttons svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página en Mantenimiento</title>
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
+  <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar ">
+  <meta name="author" content="SRZ Sacabollos">
+  <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
+
+  <!-- Estilos -->
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      margin-bottom: 60px;
+    }
+
+    .overlay h1, .overlay p {
+      margin: 10px 0;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 32px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .map-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+
+    .map-overlay.show {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .background-image {
+        object-fit: contain;
+        background-color: #000;
+      }
+
+      .overlay {
+        margin-bottom: 100px;
+      }
+
+      .map-overlay {
+        height: 250px;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6fa63.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <img src="mantenimiento.png" alt="Página en mantenimiento" class="background-img">
-        <div class="social-buttons">
-            <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
-                <svg viewBox="0 0 32 32" fill="white">
-                    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.843 0.742 5.55 
-                    2.145 7.956L0 32l8.273-2.106C10.537 31.243 13.21 32 
-                    16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zM16 
-                    29.867c-2.517 0-4.972-0.675-7.12-1.955l-0.508-0.299L3.48 
-                    28.52l0.922-4.789-0.313-0.509C2.031 21.17 1.067 18.625 
-                    1.067 16 1.067 8.737 8.737 1.067 16 1.067S30.933 8.737 
-                    30.933 16 23.263 29.867 16 29.867zM23.163 19.636c-0.336 
-                    0.939-1.663 1.616-2.279 1.663-0.585 0.049-1.283 0.07-2.063-0.317-0.476-0.232-1.078-0.395-1.854-0.869-2.027-1.205-3.328-3.474-3.429-3.643s-0.821-1.142-0.821-2.184 
-                    0.517-1.548 0.703-1.758c0.185-0.211 0.41-0.264 
-                    0.547-0.264s0.273-0.002 0.391 0.007c0.125 0.008 
-                    0.293-0.048 0.459 0.35 0.172 0.409 0.585 1.411 
-                    0.638 1.514 0.049 0.103 0.08 0.222 0.016 0.361-0.064 
-                    0.14-0.096 0.227-0.191 0.35s-0.2 0.264-0.287 0.354c-0.094 
-                    0.096-0.191 0.201-0.082 0.396s0.484 0.795 1.034 
-                    1.286c0.712 0.634 1.293 0.829 1.488 0.923s0.312 
-                    0.078 0.438-0.047c0.127-0.125 0.508-0.593 
-                    0.644-0.797 0.135-0.205 0.271-0.17 0.459-0.102 
-                    0.191 0.07 1.213 0.573 1.419 0.678s0.344 0.156 
-                    0.395 0.244c0.053 0.088 0.053 0.939-0.283 1.878z"/>
-                </svg>
-            </a>
-            <a href="https://instagram.com/srzsacabollos" target="_blank" aria-label="Instagram">
-                <svg viewBox="0 0 448 512" fill="white">
-                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 
-                    370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 
-                    224.1 141zm0 186c-39.3 0-71.1-31.8-71.1-71.1S184.8 
-                    184.9 224.1 184.9 295.2 216.7 295.2 255.9 263.4 
-                    327 224.1 327zm124.7-194.3c0 14.9-12.1 
-                    27-27 27s-27-12.1-27-27 12.1-27 27-27 
-                    27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.5s-57.8-34.5-93.5-36.2C270.4 
-                    0 177.6 0 141.8 1.7 106.1 3.4 74.5 11.6 48.3 
-                    37.9 22.1 64.1 10 95.7 8.3 131.4 6.6 167.2 6.6 
-                    259.9 8.3 295.6c1.7 35.7 9.9 67.3 36.2 93.5s57.8 
-                    34.5 93.5 36.2c35.7 1.7 128.5 1.7 164.2 
-                    0 35.7-1.7 67.3-9.9 93.5-36.2s34.5-57.8 
-                    36.2-93.5c1.7-35.7 1.7-128.5 
-                    0-164.2zM398.8 388c-7.8 19.6-22.9 34.7-42.6 
-                    42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 
-                    9-132.1c7.8-19.6 22.9-34.7 42.6-42.6C121.3 
-                    32.3 191.3 35 224 35s102.7-2.6 
-                    132.1 9c19.6 7.8 34.7 22.9 
-                    42.6 42.6 11.7 29.5 9 99.5 9 
-                    132.1s2.7 102.7-9 132.1z"/>
-                </svg>
-            </a>
-        </div>
-         <div style="width: 90%; max-width: 600px; margin-top: 40px; text-align: center;">
-  <h2 style="margin-bottom: 10px;">Encontranos</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.963706527969!2d-56.17594152371607!3d-34.90063327285751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f814543472b55%3A0x72659d20a7f96cc0!2sPres.%20Gir%C3%B3%202475%2C%2011300%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1716145023620!5m2!1ses-419!2suy"
-    width="100%"
-    height="300"
-    style="border:0; border-radius: 16px;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+  <div class="container">
+    <!-- Imagen de fondo -->
+    <img src="mantenimiento.png" alt="Página en mantenimiento" class="background-image" />
+
+    <!-- Mapa oculto -->
+    <div class="map-overlay" id="mapContainer">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.963706527969!2d-56.17594152371607!3d-34.90063327285751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f814543472b55%3A0x72659d20a7f96cc0!2sPres.%20Gir%C3%B3%202475%2C%2011300%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1716145023620!5m2!1ses-419!2suy"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-   
+
+    <!-- Texto e íconos -->
+    <div class="overlay">
+      <h1>Nuestra página está en mantenimiento</h1>
+      <p>Estaremos de vuelta muy pronto</p>
+      <div class="social-icons" id="socialArea">
+        <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/srzsacabollos/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para mostrar el mapa al interactuar -->
+  <script>
+    const mapContainer = document.getElementById("mapContainer");
+    const socialArea = document.getElementById("socialArea");
+
+    // Mostrar el mapa cuando el mouse entra a la zona de los íconos
+    socialArea.addEventListener("mouseenter", () => {
+      mapContainer.classList.add("show");
+    });
+
+    // Ocultar el mapa cuando el mouse sale de la zona
+    socialArea.addEventListener("mouseleave", () => {
+      mapContainer.classList.remove("show");
+    });
+
+    // Mostrar el mapa si se scrollea cerca del fondo (para celulares)
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY + window.innerHeight;
+      const threshold = document.body.offsetHeight - 100;
+      if (scrollY >= threshold) {
+        mapContainer.classList.add("show");
+      }
+    });
+  </script>
 </body>
 </html>
+
