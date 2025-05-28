@@ -1,163 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página en Mantenimiento</title>
-
-  <!-- SEO y Favicon -->
-  <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
-  <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar ">
-  <meta name="author" content="SRZ Sacabollos">
-  <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
-
-  <!-- FontAwesome para íconos -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      color: white;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .background {
-      background: url("mantenimiento.png") no-repeat center center;
-      background-size: contain;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      background-color: #000;
-    }
-
-    @media (max-width: 768px) {
-      .background {
-        background-size: contain;
-        background-position: top center;
-      }
-    }
-
-    .social-icons {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 30px;
-      z-index: 3;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 2.5rem;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    .map-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40%;
-      z-index: 2;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-
-    .map-container.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      filter: grayscale(100%) brightness(0.7);
-      cursor: pointer;
-    }
-
-    /* Para móviles: mostrar siempre el mapa */
-    @media (max-width: 768px) {
-      .map-container {
-        opacity: 1 !important;
-        pointer-events: all !important;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página en Mantenimiento</title>
+    <meta name="description" content="Especialistas en sacabollos en Montevideo. SRZ Sacabollos. Defendiendo el legado del primer sacabollos del Uruguay.">
+    <meta name="keywords" content="sacabollos, chapa y pintura, Montevideo, autos, reparación, granizo, cerámicos, sin pintar, pdr, desabollado, saca bollos, bollos, desabollado sin pintar">
+    <meta name="author" content="SRZ Sacabollos">
+    <link rel="icon" href="https://srzsacabollos.uy/favicon.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        img.main-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 600px) {
+            .social-icons {
+                position: static;
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="background"></div>
-
-  <div class="social-icons" id="social">
-    <a href="https://wa.me/59898800997" target="_blank" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://www.instagram.com/srzsacabollos" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-
-  <div class="map-container" id="map-container" title="Abrir en Google Maps">
-    <iframe
-      id="map-iframe"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.7997559646786!2d-56.17079662362204!3d-34.894128272845535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f813b44e2e88d%3A0x3c3e97b7ec7644a3!2sPres.%20Giro%202475%2C%2011800%20Montevideo%2C%20Uruguay!5e0!3m2!1ses-419!2suy!4v1716124923456!5m2!1ses-419!2suy"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-  <script>
-    const socialArea = document.getElementById("social");
-    const mapContainer = document.getElementById("map-container");
-
-    // No aplicar animación en móviles
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) {
-      socialArea.addEventListener("mouseenter", () => {
-        mapContainer.classList.add("active");
-      });
-
-      socialArea.addEventListener("mouseleave", () => {
-        mapContainer.classList.remove("active");
-      });
-
-      document.addEventListener("mousemove", (e) => {
-        const screenHeight = window.innerHeight;
-        if (e.clientY > screenHeight * 0.66) {
-          mapContainer.classList.add("active");
-        } else {
-          mapContainer.classList.remove("active");
-        }
-      });
-    }
-
-    // Al hacer clic en el mapa, abrir el perfil de Google Maps
-    const mapLink = "https://www.google.com/maps/place/Pres.+Giro+2475,+Montevideo,+Uruguay";
-    document.getElementById("map-iframe").addEventListener("click", () => {
-      window.open(mapLink, "_blank");
-    });
-  </script>
+    <img class="main-image" src="mantenimiento.png" alt="Página en mantenimiento">
+    <h1>Nuestra página está en mantenimiento</h1>
+    <p>Estaremos de vuelta muy pronto</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/srzsacabollos" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/59898800997" target="_blank">
+            <img src="whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
+</body>
+</html>
 
 </body>
 </html>
